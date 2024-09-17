@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-container">
+        <h1>🎬 Movie Search App 🍿</h1>
+        <div class="search-bar">
+            <input type="text" id="movienames" placeholder="Search Movie">
+            <button id="button" onclick="searchItems()">Search</button>
+        </div>
+        <div id="result" class="result-container"></div>
+    </div>
+
+    <script>
+        function searchItems() {
+            var moviename = document.getElementById('movienames').value;
+            fetch(`https://www.omdbapi.com/?apikey=fa1c9c03&t=${moviename}`)
+                .then(data => data.json())
+                .then(movie => {
+                    displayData(movie);
+                });
+        }
+
+        function displayData(movie) {
+            let cardHTML = `
+            <div class="movie-card">
+                <div class="poster">
+                    <img src='${movie.Poster}' alt="${movie.Title} poster">
+                </div>
+                <div class="movie-info">
+                    <h2>${movie.Title}</h2>
+                    <p><strong>Release:</strong> ${movie.Released}</p>
+                    <p><strong>Director:</strong> ${movie.Director}</p>
+                    <p><strong>Writer:</strong> ${movie.Writer}</p>
+                    <p><strong>Actors:</strong> ${movie.Actors}</p>
+                    <p><strong>Language:</strong> ${movie.Language}</p>
+                    <p><strong>Country:</strong> ${movie.Country}</p>
+                    <p><strong>Awards:</strong> ${movie.Awards}</p>
+                </div>
+            </div>
+            `;
+            document.getElementById('result').innerHTML = cardHTML;
+        }
+    </script>
+</body>
+
+</html>

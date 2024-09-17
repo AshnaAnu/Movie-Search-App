@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #73b6e6 0%, #dce5e9 100%);
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main-container {
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    /* background: linear-gradient(135deg, #8398ba 0%, #c2e9fb 100%); */
+    background-color: #6ba2c9;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px #555;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#movienames {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px 0 0 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    background-color: #fff5f5;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#button:hover {
+    background-color: #e55446;
+}
+
+.result-container {
+    margin-top: 20px;
+}
+
+.movie-card {
+    display: flex;
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+   
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.poster img {
+    width: 150px;
+    height: 225px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movie-info {
+    margin-left: 20px;
+}
+
+.movie-info h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #211f1f;
+    text-shadow: 1px 1px #0f0f0f;
+}
+
+.movie-info p {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #211d1d;
+  
+}
+
+.movie-info strong {
+    color: #343131;
+}
